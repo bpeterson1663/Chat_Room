@@ -1,4 +1,8 @@
 <?php
+// $host = 'localhost';
+// $user = "root";
+// $password = "root";
+// $db = "chat";
 
 $host = 'us-cdbr-iron-east-04';
 $user = "bdbe1bd843a3e7";
