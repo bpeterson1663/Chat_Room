@@ -11,7 +11,7 @@ $username = $url["user"];
 $password = $url["pass"];
 $db = substr($url["path"], 1);
 
-$link = new mysqli($server, $username, $password, $db);
+$link = mysqli_connect($server, $username, $password, $db);
 
 
 function formatDate($date){
