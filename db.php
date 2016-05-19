@@ -3,28 +3,23 @@
 // $user = "root";
 // $password = "root";
 // $db = "chat";
-//$link = mysqli_connect($host, $user, $password, $db);
+// $link = mysqli_connect($host, $user, $password, $db);
 
-// $host = 'ec2-54-235-183-5.compute-1.amazonaws.com';
-// $user = "gxclfpeyaozoau";
-// $password = "63w_PWrjRJ53rwSiwkv9DTq_hh";
-// $db = "d1g0gsrv6ujq1p";
+// $host = 'us-cdbr-iron-east-04.cleardb.net';
+// $user = "bdbe1bd843a3e7";
+// $password = "c029cf19";
+// $db = "heroku_1122e83085eb00f";
 //
-// $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-//
-// $server = $url["host"];
-// $username = $url["user"];
-// $password = $url["pass"];
-// $db = substr($url["path"], 1);
-// $link = pg_connect("host=".$host." dbname=".$db." user=".$user." password=".$password."");
-//$link = mysqli_connect($server, $username, $password, $db);
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-if(process.env.DATABASE_URL) {//connecting to outside heroku database
-  pg.defaults.ssl = true;
-  $link = process.env.DATABASE_URL;
-} else{//connecting to local database before being connected to heroku for testing purposes
-  $link = 'postgress://localhost:5432/taskOrganizer';
-}
+$server = $url["us-cdbr-iron-east-04.cleardb.net"];
+$username = $url["bdbe1bd843a3e7"];
+$password = $url["c029cf19"];
+$db = substr($url["heroku_1122e83085eb00f"], 1);
+
+$link = mysqli_connect($server, $username, $password, $db);
+
+
 function formatDate($date){
   return date('g:i a', strtotime($date));
 }

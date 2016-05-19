@@ -45,7 +45,7 @@
             $message = $_POST['message'];
 
             $query = "INSERT INTO chat_data (name , message) values ('".$name."','".$message."');";
-            if($result = pg_query($link, $query)){
+            if($result = mysqli_query($link, $query)){
               echo '<embed loop="false" src="bleep.mp3" hidden="true" autoplay="true"  />';
             }
         }
