@@ -1,7 +1,7 @@
 <?php
 include('db.php');
-//$query = "CREATE TABLE IF NOT EXISTS chat_data (id SERIAL PRIMARY KEY, name varchar(30), message text, date timestamp(current_timestamp) );";
-//mysqli_query($link, $query);
+$query = "CREATE TABLE IF NOT EXISTS chat_data (id SERIAL PRIMARY KEY, name varchar(30), message text, date timestamp(current_timestamp) );";
+mysqli_query($link, $query);
 $query = "SELECT * FROM chat_data ORDER BY id DESC;";
 
 if($result = mysqli_query($link, $query)){
