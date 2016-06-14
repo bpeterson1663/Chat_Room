@@ -1,5 +1,6 @@
 $(document).ready(function(){
   ajax();
+  console.log("ready");
 });
 
 function ajax(){
