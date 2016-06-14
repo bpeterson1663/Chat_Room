@@ -4,6 +4,7 @@ $(document).ready(function(){
 });
 
 function ajax(){
+  console.log("Calling");
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function(){
