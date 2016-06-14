@@ -7,12 +7,10 @@ $db = "heroku_1a4d0911e825216";
 
 $link = mysqli_connect($server, $username, $password, $db);
 
-
 function formatDate($date){
   return date('g:i a', strtotime($date));
 }
 
-$query = "CREATE TABLE IF NOT EXISTS chat_data (id SERIAL PRIMARY KEY, name varchar(30), message text, date timestamp(current_timestamp) );";
 mysqli_query($link, $query);
 $query = "SELECT * FROM chat_data ORDER BY id DESC;";
 
@@ -23,6 +21,6 @@ if($result = mysqli_query($link, $query)){
       echo '<td class="date"><b>'.formatDate($row['date']).'</b></td></tr>';
     }
 }else{
-  echo "It failed";
+  echo "It failed. Please Try Again.";
 }
 ?>
